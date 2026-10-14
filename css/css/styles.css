@@ -1,530 +1,229 @@
-/* ============================================
-   FILE: css/styles.css - shared by all Events Hub pages
-   Practical III - JNEC Events Hub
-   ============================================ */
-
-/* ===== PART A: External CSS Starter Rules ===== */
+/* FILE: css/styles.css — shared by all Events Hub pages */
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    margin: 0;
-    color: #1e293b;
-    background: #f8fafc;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  color: #1e293b;
+  background: #f8fafc;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 header {
-    background: #0f172a;
-    color: white;
-    padding: 16px 24px;
+  background: #0f172a;
+  color: white;
+  padding: 16px 24px;
 }
 
 nav a {
-    color: #7dd3fc;
-    margin-right: 12px;
-    text-decoration: none;
+  color: #7dd3fc;
+  margin-right: 12px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
 }
 
 footer {
-    background: #0f172a;
-    color: #e2e8f0;
-    padding: 16px 24px;
-    margin-top: 40px;
-    text-align: center;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 16px 24px;
+  margin-top: 40px;
 }
 
 main {
-    padding: 24px;
+  padding: 24px;
 }
 
-/* ===== PART B: CSS Selectors ===== */
+/* ---------- Simple selectors ---------- */
+h1 { color: #0f172a; }
+h1 { font-size: 2rem; }
+h1 { font-weight: 700; }
 
-/* ---- B1: Simple Selectors ---- */
-h1 {
-    color: #0f172a;
-}
+h2 { font-size: 1.5rem; }
+h2 { text-align: left; }
+h2 { color: #0369a1; }
 
-.intro {
-    background: #f8fafc;
-}
+h1, h2, h3 { font-family: Georgia, serif; }
 
-#welcome {
-    padding: 24px;
-}
+.intro { background: #f8fafc; }
+#welcome { padding: 24px; }
+p.intro { font-size: 1.05rem; }
 
-p.intro {
-    font-size: 1.05rem;
-}
+/* ---------- Combinators ---------- */
+nav a { text-decoration: none; }
+main > section { margin-bottom: 24px; }
+h2 + p { font-style: italic; }
+h2 ~ p { color: #334155; }
 
-h1, h2, h3 {
-    font-family: Georgia, serif;
-}
+/* ---------- Pseudo-classes ---------- */
+nav a:hover { color: #38bdf8; }
+input:focus { outline: 2px solid #0369a1; }
+input:checked + label { font-weight: 700; }
+tr:nth-child(even) { background: #f1f5f9; }
 
-/* ---- B2: Combinator Selectors ---- */
-nav a {
-    text-decoration: none;
-}
+/* anchor LVHA order */
+a:link { color: #0369a1; }
+a:visited { color: #7c3aed; }
+a:hover { color: #0ea5e9; }
+a:active { color: #b91c1c; }
 
-main > section {
-    margin-bottom: 24px;
+/* ---------- Pseudo-elements ---------- */
+p::first-line { font-weight: bold; }
+.intro::first-letter {
+  font-size: 1.6em;
+  color: #0369a1;
 }
+h2::before { content: "★ "; color: #d97706; }
+li::marker { color: #059669; }
+::selection { color: #7f1d1d; background: #fde68a; }
 
-h2 + p {
-    font-style: italic;
-}
-
-h2 ~ p {
-    color: #334155;
-}
-
-/* ---- B3: Pseudo-class Selectors ---- */
-nav a:hover {
-    color: #38bdf8;
-}
-
-nav a.active {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    padding: 8px 16px;
-}
-
-input:focus {
-    outline: 2px solid #0369a1;
-}
-
-input:checked + label {
-    font-weight: 700;
-}
-
-/* Anchor LVHA order */
-a:link {
-    color: #0369a1;
-}
-a:visited {
-    color: #7c3aed;
-}
-a:hover {
-    color: #0ea5e9;
-}
-a:active {
-    color: #b91c1c;
-}
-
-/* ---- B4: Pseudo-element Selectors ---- */
-p:first-line {
-    font-weight: bold;
-}
-
-.intro:first-letter {
-    font-size: 1.6rem;
-    color: #0369a1;
-}
-
-h2::before {
-    content: "";
-}
-
-li::marker {
-    color: #059669;
-}
-
-::selection {
-    color: #7f1d1d;
-    background: #fde68a;
-}
-
-/* ---- B5: Attribute Selectors ---- */
-a[target="_blank"] {
-    color: #d97706;
-}
+/* ---------- Attribute selectors ---------- */
+a[target="_blank"] { color: #d97706; }
 
 input[type="file"] {
-    border: 1px dashed #94a3b8;
-    padding: 8px;
+  border: 1px dashed #94a3b8;
+  padding: 8px;
 }
 
 input[type="text"] {
-    border: 1px solid #cbd5e1;
-    padding: 8px;
+  border: 2px solid #0d6efd;
+  border-radius: 4px;
+  padding: 8px;
 }
 
-/* ===== PART C: Text Formatting & Colour ===== */
-
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 1.5rem;
-    text-align: left;
-    color: #0369a1;
-}
-
-h3 {
-    font-family: Georgia, serif;
-}
-
+/* ---------- Text styling ---------- */
 .hero-title {
-    letter-spacing: 0.04em;
-    word-spacing: 0.1em;
+  letter-spacing: 0.04em;
+  word-spacing: 0.1em;
 }
-
-em {
-    font-style: italic;
-}
-
+em { font-style: italic; }
 .intro p {
-    text-indent: 2em;
-    text-align: justify;
-}
-
-nav a {
-    text-decoration: none;
+  text-indent: 2em;
+  text-align: justify;
 }
 
 .sold-out {
-    text-decoration: line-through;
-    text-decoration-color: #ef4444;
-    text-decoration-style: solid;
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  text-decoration-style: solid;
 }
 
-/* Colours */
-body {
-    color: rgb(30, 41, 59);
-}
+body { color: rgb(30, 41, 59); }
+.highlight { color: crimson; }
+header { background-color: #0f172a; }
 
-h2 {
-    color: #0369a1;
-}
-
-.highlight {
-    color: crimson;
-}
-
-header {
-    background-color: #0f172a;
-}
-
-/* ===== PART D: Margin & Padding ===== */
-
+/* ---------- Box model ---------- */
 .intro {
-    margin: 24px 16px 32px 16px;
-    padding: 20px;
-    border: 1px solid #e2e8f0;
-    background: white;
+  margin: 24px 16px 32px 16px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  background: white;
 }
 
 section {
-    margin-bottom: 28px;
-    padding-left: 8px;
+  margin-bottom: 28px;
+  padding-left: 8px;
 }
 
-/* ===== PART E: Display Properties ===== */
+/* ---------- Display ---------- */
+.admin-only { display: none; }
+.badge { display: inline; }
+.event-card { display: block; }
 
-nav a {
-    display: inline-block;
-    padding: 8px 16px;
+img { max-width: 100%; height: auto; }
+
+/* ---------- Table hover ---------- */
+table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.admin-only {
-    display: none;
+/* ============================================================
+   ADDED FOR PRACTICAL IV — JavaScript features
+   ============================================================ */
+
+/* 1. Form validation error messages (validate.js writes here) */
+.error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.25rem;
 }
 
-.badge {
-    display: inline;
+/* 2. Sold-out event cards (main.js adds .sold-out-card) */
+.sold-out-card {
+  opacity: 0.85;
+}
+.sold-out-card .card-title {
+  text-decoration: line-through;
 }
 
-.event-card {
-    display: block;
+/* 3. Seats hint under the event dropdown (main.js updates #seatsHint) */
+.seats-hint {
+  font-size: 0.95rem;
+  color: #0369a1;
+  font-weight: 500;
 }
 
-/* ===== PART F: Responsive Design ===== */
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Media query for small screens */
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 4px 0;
-        text-align: center;
-    }
-    body {
-        font-size: 15px;
-    }
-    header {
-        padding: 12px 16px;
-    }
-    main {
-        padding: 16px;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-    h2 {
-        font-size: 1.2rem;
-    }
-    .intro {
-        padding: 16px;
-        margin: 16px 8px;
-    }
-    .club-card {
-        padding: 16px;
-    }
-    .info-card {
-        padding: 16px;
-    }
-    .map-container iframe {
-        height: 200px;
-    }
-}
-
-/* ===== ADDITIONAL STYLES ===== */
-
-/* Original pseudo-class rule with comment */
-/* This rule styles any button when the user hovers over it */
-button:hover {
-    background-color: #0f172a;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-/* Original attribute selector with comment */
-/* This rule styles all input elements that have a 'required' attribute */
-input[required] {
-    border-color: #dc2626;
-    border-width: 2px;
-}
-
-/* ===== HOME PAGE SPECIFIC STYLES ===== */
-
-/* Welcome Section */
-.intro h2 {
-    margin-top: 0;
-    color: #0f172a;
-}
-
-.intro h2::before {
-    content: "";
-}
-
-.intro p {
-    font-size: 1.05rem;
-    color: #334155;
-}
-
-.highlight {
-    color: #dc2626;
-    font-weight: 700;
-    padding: 2px 6px;
-    background: #fee2e2;
-    border-radius: 4px;
-}
-
-/* Clubs Section */
-#clubs h2 {
-    margin-bottom: 4px;
-}
-
-#clubs .subtitle {
-    color: #64748b;
-    margin-bottom: 24px;
-    font-style: italic;
-}
-
-.club-card {
-    background: white;
-    padding: 20px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    height: 100%;
-    border-top: 4px solid #0f172a;
-}
-
-.club-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transform: translateY(-4px);
-}
-
-.club-card h3 {
-    font-family: Georgia, serif;
-    color: #0f172a;
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-}
-
-.club-card p {
-    color: #475569;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.badge-active {
-    display: inline-block;
-    background: #0f172a;
-    color: white;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Find Us Section */
-#location h2 {
-    margin-bottom: 4px;
-}
-
-#location .subtitle {
-    color: #64748b;
-    margin-bottom: 24px;
-    font-style: italic;
-}
-
-.map-container {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-}
-
-.info-card {
-    background: white;
-    padding: 24px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    height: 100%;
-    border-left: 4px solid #0f172a;
-}
-
-.info-card h4 {
-    font-family: Georgia, serif;
-    color: #0f172a;
-    margin-bottom: 16px;
-}
-
-.info-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 16px 0;
-}
-
-.info-list li {
-    padding: 8px 0;
-    color: #475569;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.info-list li:last-child {
-    border-bottom: none;
-}
-
-.info-list li i {
-    width: 24px;
-    color: #0f172a;
-    margin-right: 8px;
-}
-
-/* ===== BOOTSTRAP OVERRIDES ===== */
-
-/* Make buttons look consistent */
-.btn-primary {
-    background-color: #0f172a;
-    border-color: #0f172a;
-}
-
-.btn-primary:hover {
-    background-color: #1e3a5f;
-    border-color: #1e3a5f;
-}
-
-/* Card styling */
-.card {
-    border-color: #e2e8f0;
-}
-
-.card-title {
-    color: #0f172a;
-}
-
-/* Form styling */
-.form-control:focus {
-    border-color: #0f172a;
-    box-shadow: 0 0 0 0.25rem rgba(15, 23, 42, 0.25);
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 768px) {
-    .club-card {
-        padding: 16px;
-    }
-    
-    .club-card h3 {
-        font-size: 1.1rem;
-    }
-    
-    .info-card {
-        padding: 16px;
-    }
-    
-    .info-list li {
-        padding: 6px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .club-card {
-        padding: 14px;
-    }
-    
-    .club-card h3 {
-        font-size: 1rem;
-    }
-    
-    .info-card {
-        padding: 14px;
-    }
-    
-    .intro p {
-        font-size: 0.95rem;
-    }
-}
+/* 4. Dark mode toggle button position */
 #darkToggle {
-    margin: 12px 0;
-    padding: 6px 12px;
-    background-color: #0369a1;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  header #darkTogger {
-    float: right;
-    margin-top: -32px;
-  }
+  float: right;
+  margin-top: 4px;
+}
 
-  .error {
-    color: #dc2626;
-    font-size: 0.9rem;
+/* 5. Dark mode theme (main.js toggles body.dark) */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+body.dark header,
+body.dark footer {
+  background: #020617;
+}
+body.dark .card,
+body.dark .intro {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+body.dark h1,
+body.dark h2 {
+  color: #7dd3fc;
+}
+body.dark a:link { color: #7dd3fc; }
+body.dark a:visited { color: #c4b5fd; }
+body.dark a:hover { color: #38bdf8; }
+
+body.dark .seats-hint {
+  color: #7dd3fc;
+}
+
+body.dark table {
+  color: #e2e8f0;
+}
+body.dark table tbody tr:hover {
+  background-color: #1e293b;
+}
+
+body.dark .form-control,
+body.dark .form-select {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+body.dark .form-control::placeholder {
+  color: #94a3b8;
+}
+
+body.dark .text-muted {
+  color: #94a3b8 !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  nav a {
     display: block;
-    margin-top: 4px;
+    margin: 4px 0;
   }
-  input:invalid,
-  select:invalid,
-  textarea:invalid{
-    border-color: #dc2626;
-    outline: none;
-  }
+  body { font-size: 15px; }
+}
